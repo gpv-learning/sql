@@ -1,0 +1,13 @@
+services:
+  duckdb:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    container_name: duckdb-cli
+    volumes:
+      - ../data:/data
+      - ../scripts:/workspace/scripts
+      - ../projects:/workspace/projects
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
